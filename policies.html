@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>W3.CSS Template</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    /* Global Font Styling */
+    body {
+      font-family: "Times New Roman", Georgia, Serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+    }
+
+    /* Fade-in effect */
+    .fade-element {
+      opacity: 0;
+      transition: opacity 2s ease-in-out; /* Fade-in transition */
+    }
+
+    .fade-in {
+      opacity: 1;
+    }
+
+    /* Image Container for Gradient Effect and Cropping */
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Hides the bottom 20% of the image */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover; /* Ensures the image covers the container */
+      object-position: center top; /* Position image to crop the bottom */
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%; /* Adjust for the gradient coverage */
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Title Text Styling */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 5%; /* Align text to the left */
+      transform: translateY(-50%);
+      color: #000;
+      font-size: 5.5rem;
+      text-align: left;
+      z-index: 2;
+      line-height: 1.4;
+    }
+
+    .overlay-text h1 {
+      margin: 0;
+      font-size: 5.6rem; /* Double the original size */
+    }
+
+    .overlay-text p {
+      margin-top: 10px;
+      font-size: 2.4rem; /* Double the original size */
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .overlay-text h1 {
+        font-size: 4rem; /* Adjust size for smaller screens */
+      }
+      .overlay-text p {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Styling for smaller image below */
+    .smaller-image {
+      width: 50%; /* Adjust the width to make the image smaller */
+      max-width: 200px; /* Limit the size to a maximum of 200px */
+      margin: 20px auto; /* Center the image horizontally with some space on top and bottom */
+      display: block; /* Ensures it's displayed as a block element */
+    }
+  </style>
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeElements = document.querySelectorAll(".fade-element");
+
+    // Function to check if an element is in the viewport
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Function to add the fade-in effect
+    function handleScroll() {
+      fadeElements.forEach((el) => {
+        if (isInViewport(el)) {
+          el.classList.add("fade-in");
+        }
+      });
+    }
+
+    // Trigger on scroll and initial page load
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run once to catch elements already in view
+  });
+</script>
+
+<body>
+
+ <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html" class="w3-bar-item w3-button fade-element">S.P.Q.R Republic of Rome</a>
+    <div class="w3-right w3-hide-small">
+      <a href="about.html" class="w3-bar-item w3-button fade-element">About</a>
+      <a href="military-achievements.html" class="w3-bar-item w3-button fade-element">Military Achievements</a>
+      <a href="policies.html" class="w3-bar-item w3-button fade-element">Policies</a>
+      <a href="endorsements.html" class="w3-bar-item w3-button fade-element">Endorsements</a>
+      <a href="political-achievements.html" class="w3-bar-item w3-button fade-element">Political Achievements</a>
+    </div>
+  </div>
+</div>
+        <a href="#Political Achievements" class="w3-bar-item w3-button fade-element">Political Achievements</a> <!-- Fade element here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Section with Image and Overlay Text -->
+  <div class="image-container">
+    <img src="MV5BYWFiOWEzOTQtNDY3OS00ZGVjLTliNTEtYWE3MTBkMTBiZWM3XkEyXkFqcGc@._V1_.jpg">
+    <div class="overlay-text fade-element"> <!-- Fade element here -->
+      <h1>Policies</h1>
+     
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-row">
+    <!-- Image Section -->
+    <div class="w3-col m3 w3-padding-large">
+      <img src="360_F_177686491_8mCyH9lTptItbRTsEZYYhA7tXrY5UVoT.webp" class="fade-element" style="width: 100%; margin-right: 20px;"> <!-- Fade element here -->
+    </div>
+
+    <!-- Text Section -->
+    <div class="w3-col m9 w3-padding-large">
+      <h1 class="w3-center fade-element">Policies For The Plebs Not Just The Rich </h1><br> <!-- Fade element here -->
+      <h5 class="w3-tag w3-light-grey" Military Reforms: Creating a Professional Army
+Marius’ military reforms reshaped the Roman army, enabling it to meet the challenges of a growing empire and ensuring its longevity:
+
+<h5 class="w3-tag w3-light-grey">Recruitment of the Proletarii: In response to manpower shortages, Marius introduced groundbreaking legislation allowing landless citizens to enlist in the army. This not only solved recruitment issues but also provided the poor with a path to wealth and status.
+Standardization and Innovation:
+Redesigned the pilum (spear) for increased durability and functionality in battle.
+Standardized the eagle as the legion’s symbol, fostering unity and pride among soldiers.
+Replaced the maniple system with cohorts, creating larger, more cohesive units better suited for large-scale engagements.
+Improved Logistics: His policies ensured soldiers carried their own supplies ("Marius’s Mules"), enhancing mobility and reducing reliance on slow baggage trains..</span>
+
+<h5 class="w3-tag w3-light-grey">Social and Economic Policies
+Marius understood that military success was tied to the wellbeing of the Republic’s citizens, leading him to champion policies that addressed social and economic inequalities:
+
+<h5 class="w3-tag w3-light-grey">Veteran Land Grants: Marius supported laws granting land to veterans, providing them with financial stability and rewarding their service. This included extending benefits to Italian allies, promoting loyalty and integration within Rome’s broader network.
+Lowered Grain Prices: He advocated for measures to reduce the price of wheat distributed by the state, easing the burden on the urban poor and ensuring access to basic necessitie</span> 
+
+<h5 class="w3-tag w3-light-grey">Recognized by Scipio for his potential, Marius demonstrated exceptional leadership and combat skills, earning praise as a future leader of Rome.
+This campaign marked the start of his rise.</span> 
+
+    <h5 class="w3-tag w3-light-grey">Support for Political Allies and Reforms
+Through his alliance with the populist Saturninus, Marius pushed for reforms that challenged the traditional aristocracy and expanded opportunities for the lower classes:
+
+<h5 class="w3-tag w3-light-grey">Supported legislation to exile political rivals, such as his former commander Metellus Numidicus, consolidating his influence in the Senate.
+Advocated for the redistribution of land and resources to the urban poor and veterans, securing a political base among the plebs and soldiers.</span>
+
+
+
+<h5 class="w3-tag w3-light-grey">His campaigns preserved Rome’s borders and crushed its enemies, from North Africa to Gaul.
+His reforms professionalized the army, setting a standard that would define Roman warfare for centuries.
+As a leader, he inspired loyalty and trust, earning the respect of his troops and the Roman people
+    </div>

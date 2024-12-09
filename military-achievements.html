@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>W3.CSS Template</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    /* Global Font Styling */
+    body {
+      font-family: "Times New Roman", Georgia, Serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+    }
+
+    /* Fade-in effect */
+    .fade-element {
+      opacity: 0;
+      transition: opacity 2s ease-in-out; /* Fade-in transition */
+    }
+
+    .fade-in {
+      opacity: 1;
+    }
+
+    /* Image Container for Gradient Effect and Cropping */
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Hides the bottom 20% of the image */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover; /* Ensures the image covers the container */
+      object-position: center top; /* Position image to crop the bottom */
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%; /* Adjust for the gradient coverage */
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Title Text Styling */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 5%; /* Align text to the left */
+      transform: translateY(-50%);
+      color: #000;
+      font-size: 5.5rem;
+      text-align: left;
+      z-index: 2;
+      line-height: 1.4;
+    }
+
+    .overlay-text h1 {
+      margin: 0;
+      font-size: 5.6rem; /* Double the original size */
+    }
+
+    .overlay-text p {
+      margin-top: 10px;
+      font-size: 2.4rem; /* Double the original size */
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .overlay-text h1 {
+        font-size: 4rem; /* Adjust size for smaller screens */
+      }
+      .overlay-text p {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Styling for smaller image below */
+    .smaller-image {
+      width: 50%; /* Adjust the width to make the image smaller */
+      max-width: 200px; /* Limit the size to a maximum of 200px */
+      margin: 20px auto; /* Center the image horizontally with some space on top and bottom */
+      display: block; /* Ensures it's displayed as a block element */
+    }
+  </style>
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeElements = document.querySelectorAll(".fade-element");
+
+    // Function to check if an element is in the viewport
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Function to add the fade-in effect
+    function handleScroll() {
+      fadeElements.forEach((el) => {
+        if (isInViewport(el)) {
+          el.classList.add("fade-in");
+        }
+      });
+    }
+
+    // Trigger on scroll and initial page load
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run once to catch elements already in view
+  });
+</script>
+
+<body>
+
+ <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html" class="w3-bar-item w3-button fade-element">S.P.Q.R Republic of Rome</a>
+    <div class="w3-right w3-hide-small">
+      <a href="about.html" class="w3-bar-item w3-button fade-element">About</a>
+      <a href="military-achievements.html" class="w3-bar-item w3-button fade-element">Military Achievements</a>
+      <a href="policies.html" class="w3-bar-item w3-button fade-element">Policies</a>
+      <a href="endorsements.html" class="w3-bar-item w3-button fade-element">Endorsements</a>
+      <a href="political-achievements.html" class="w3-bar-item w3-button fade-element">Political Achievements</a>
+    </div>
+  </div>
+</div>
+        <a href="#Political Achievements" class="w3-bar-item w3-button fade-element">Political Achievements</a> <!-- Fade element here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Section with Image and Overlay Text -->
+  <div class="image-container">
+    <img src="13598.jpg" alt="Screenshot">
+    <div class="overlay-text fade-element"> <!-- Fade element here -->
+      <h1>Military Achievements</h1>
+     
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-row">
+    <!-- Image Section -->
+    <div class="w3-col m3 w3-padding-large">
+      <img src="Western_Mediterranean_territory,_150_BC.svg" alt="Screenshot" class="fade-element" style="width: 100%; margin-right: 20px;"> <!-- Fade element here -->
+    </div>
+
+    <!-- Text Section -->
+    <div class="w3-col m9 w3-padding-large">
+      <h1 class="w3-center fade-element">Military achievments </h1><br> <!-- Fade element here -->
+     <h5 class="w3-tag w3-light-grey">Gaius Marius, one of Rome’s most accomplished military leaders, built an unparalleled record of achievements that secured the Republic’s survival and laid the foundation for future dominance. His campaigns showcase his tactical brilliance, innovative reforms, and unwavering dedication to Rome's greatness.</span>
+
+<h5 class="w3-tag w3-light-grey">Early Military Recognition in Numantia (134 BCE)
+Marius’ military career began under the legendary Scipio Aemilianus during the siege of Numantia in Spain.</span> 
+
+<h5 class="w3-tag w3-light-grey">Recognized by Scipio for his potential, Marius demonstrated exceptional leadership and combat skills, earning praise as a future leader of Rome.
+This campaign marked the start of his rise.</span> 
+
+   <h5 class="w3-tag w3-light-grey">The Jugurthine War (112–105 BCE)
+The Jugurthine War against the cunning Numidian king Jugurtha tested Rome’s resilience, with Marius emerging as a decisive figure:</span>
+
+<h5 class="w3-tag w3-light-grey">Battle of the Muthul: Marius saved the Roman army from destruction by reorganizing scattered detachments and leading a counterattack that turned the tide of the battle.
+
+<h5 class="w3-tag w3-light-grey">Capture of Jugurtha: His efforts culminated in Jugurtha’s capture, ending the war and restoring Rome’s dominance in North Africa.
+Gained the admiration of soldiers and Italian allies alike, proving himself a leader of both strategy and morale.</span>
+
+<h5 class="w3-tag w3-light-grey">Victories Over the Teutones and Cimbri (102–101 BCE)
+Marius’ leadership during the invasions of the Teutones and Cimbri safeguarded Rome from catastrophic defeat:</span>
+
+<h5 class="w3-tag w3-light-grey">Battle of Aquae Sextiae (102 BCE): Marius orchestrated the annihilation of the Teutones and Ambrones, reportedly killing or capturing over 100,000 enemies.
+<h5 class="w3-tag w3-light-grey"Battle of Vercellae (101 BCE): In a coordinated assault with Sulla and Catulus, Marius led Roman forces to a crushing victory over the Cimbri, eliminating the barbarian threat.
+Celebrated as a savior of Rome, Marius was hailed as "the third founder of Rome" for his decisive actions.</span>
+
+<h5 class="w3-tag w3-light-grey">Legacy of Leadership
+Marius’ victories and reforms cemented his reputation as a military genius and protector of the Republic:</span>
+
+<h5 class="w3-tag w3-light-grey">His campaigns preserved Rome’s borders and crushed its enemies, from North Africa to Gaul.
+His reforms professionalized the army, setting a standard that would define Roman warfare for centuries.
+As a leader, he inspired loyalty and trust, earning the respect of his troops and the Roman people
+
+
+<br>
+<iframe width="560" height="315" 
+        <iframe width="804" height="452" src="https://www.youtube.com/embed/o-FjyEpspyw" title="Rome: from Marius to Caesar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       
+</iframe>
+
+    </div>
+  </div>
+
+  <hr>
+
+
+</body>
+</html>

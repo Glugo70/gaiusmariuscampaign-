@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>W3.CSS Template</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    /* Global Font Styling */
+    body {
+      font-family: "Times New Roman", Georgia, Serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+    }
+
+    /* Fade-in effect */
+    .fade-element {
+      opacity: 0;
+      transition: opacity 2s ease-in-out; /* Fade-in transition */
+    }
+
+    .fade-in {
+      opacity: 1;
+    }
+
+    /* Image Container for Gradient Effect and Cropping */
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Hides the bottom 20% of the image */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover; /* Ensures the image covers the container */
+      object-position: center top; /* Position image to crop the bottom */
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%; /* Adjust for the gradient coverage */
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Title Text Styling */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 5%; /* Align text to the left */
+      transform: translateY(-50%);
+      color: #000;
+      font-size: 5.5rem;
+      text-align: left;
+      z-index: 2;
+      line-height: 1.4;
+    }
+
+    .overlay-text h1 {
+      margin: 0;
+      font-size: 5.6rem; /* Double the original size */
+    }
+
+    .overlay-text p {
+      margin-top: 10px;
+      font-size: 2.4rem; /* Double the original size */
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .overlay-text h1 {
+        font-size: 4rem; /* Adjust size for smaller screens */
+      }
+      .overlay-text p {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Styling for smaller image below */
+    .smaller-image {
+      width: 50%; /* Adjust the width to make the image smaller */
+      max-width: 200px; /* Limit the size to a maximum of 200px */
+      margin: 20px auto; /* Center the image horizontally with some space on top and bottom */
+      display: block; /* Ensures it's displayed as a block element */
+    }
+  </style>
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeElements = document.querySelectorAll(".fade-element");
+
+    // Function to check if an element is in the viewport
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Function to add the fade-in effect
+    function handleScroll() {
+      fadeElements.forEach((el) => {
+        if (isInViewport(el)) {
+          el.classList.add("fade-in");
+        }
+      });
+    }
+
+    // Trigger on scroll and initial page load
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run once to catch elements already in view
+  });
+</script>
+
+<body>
+
+ <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html" class="w3-bar-item w3-button fade-element">S.P.Q.R Republic of Rome</a>
+    <div class="w3-right w3-hide-small">
+      <a href="about.html" class="w3-bar-item w3-button fade-element">About</a>
+      <a href="military-achievements.html" class="w3-bar-item w3-button fade-element">Military Achievements</a>
+      <a href="policies.html" class="w3-bar-item w3-button fade-element">Policies</a>
+      <a href="endorsements.html" class="w3-bar-item w3-button fade-element">Endorsements</a>
+      <a href="political-achievements.html" class="w3-bar-item w3-button fade-element">Political Achievements</a>
+    </div>
+  </div>
+</div>
+        <a href="#Political Achievements" class="w3-bar-item w3-button fade-element">Political Achievements</a> <!-- Fade element here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Section with Image and Overlay Text -->
+  <div class="image-container">
+    <img src="1200px-Bust_of_Marius_(GL_319)_-_Glyptothek_-_Munich_-_Germany_2017.jpg">
+    <div class="overlay-text fade-element"> <!-- Fade element here -->
+      <h1>Endorsements</h1>
+     
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-row">
+    <!-- Image Section -->
+    <div class="w3-col m3 w3-padding-large">
+      <img src="maxresdefault.jpg" class="fade-element" style="width: 100%; margin-right: 20px;"> <!-- Fade element here -->
+    </div>
+
+    <!-- Text Section -->
+    <div class="w3-col m9 w3-padding-large">
+      <h1 class="w3-center fade-element">Loved By All </h1><br> <!-- Fade element here -->
+      <h5 class="w3-tag w3-light-grey">The renowned Caecilii Metelli family, known for their exceptional leadership and political influence, recognized I, Gaius Marius’ potential early on. Their endorsement helped propel me to the role of Tribune of the People in 119 BCE, marking the start of his lifelong commitment to representing everyday Romans</span>
+
+<h5 class="w3-tag w3-light-grey">Marius values family and collaboration. my marriage to Julia of the Julii Caesares family—one of Rome’s most respected lineages—symbolized a partnership rooted in shared principles and forward-thinking leadership. This union bridged tradition and innovation, setting the stage for a transformative political vision.</span> 
+
+
+  <h5 class="w3-tag w3-light-grey">Let my opposition define the measure of my character. My rival, Lucius Cornelius Sulla, revived the dictatorship—an act that undermined the very fabric of our Republic. He seized power through force, igniting the first major civil war in Roman history. In 88 BCE, he marched on Rome itself—a betrayal unprecedented in our Republic's history—to wrest political control that had rightfully been entrusted to me by the Roman people.
+
+<h5 class="w3-tag w3-light-grey">This is the kind of man who opposed me: one who disregarded the will of the people, dismantled our traditions, and used violence to achieve his ends. In contrast, I have always stood for the rule of law, the empowerment of citizens, and the defense of Rome's principles.
+
+<h5 class="w3-tag w3-light-grey">When you judge me, remember not just my accomplishments but the opposition I faced. I stood against tyranny. I stood for Rome.</span>
+
+
+
+<h5 class="w3-tag w3-light-grey">His campaigns preserved Rome’s borders and crushed its enemies, from North Africa to Gaul.
+His reforms professionalized the army, setting a standard that would define Roman warfare for centuries.
+As a leader, he inspired loyalty and trust, earning the respect of his troops and the Roman people
+
+
+<p class="w3-large w3-text-grey w3-hide-medium">(Years after Gaius Marius and his name discarded in history Julius Caesar himself, recognizing Marius’ contributions to Rome’s greatness, restored the trophies celebrating Marius’ historic victories. This act underscores Marius’ lasting impact on the Republic and his role as a symbol of resilience and success in the face of adversity.)</span> 
+    </div>

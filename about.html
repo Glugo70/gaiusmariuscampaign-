@@ -1,0 +1,206 @@
+<html>
+<head>
+  <title>W3.CSS Template</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    /* Global Font Styling */
+    body {
+      font-family: "Times New Roman", Georgia, Serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+    }
+
+    /* Fade-in effect */
+    .fade-element {
+      opacity: 0;
+      transition: opacity 2s ease-in-out; /* Fade-in transition */
+    }
+
+    .fade-in {
+      opacity: 1;
+    }
+
+    /* Image Container for Gradient Effect and Cropping */
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Hides the bottom 20% of the image */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover; /* Ensures the image covers the container */
+      object-position: center top; /* Position image to crop the bottom */
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%; /* Adjust for the gradient coverage */
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Title Text Styling */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 5%; /* Align text to the left */
+      transform: translateY(-50%);
+      color: #000;
+      font-size: 5.5rem;
+      text-align: left;
+      z-index: 2;
+      line-height: 1.4;
+    }
+
+    .overlay-text h1 {
+      margin: 0;
+      font-size: 5.6rem; /* Double the original size */
+    }
+
+    .overlay-text p {
+      margin-top: 10px;
+      font-size: 2.4rem; /* Double the original size */
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .overlay-text h1 {
+        font-size: 4rem; /* Adjust size for smaller screens */
+      }
+      .overlay-text p {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Styling for smaller image below */
+    .smaller-image {
+      width: 50%; /* Adjust the width to make the image smaller */
+      max-width: 100px; /* Limit the size to a maximum of 200px */
+      margin: 20px auto; /* Center the image horizontally with some space on top and bottom */
+      display: block; /* Ensures it's displayed as a block element */
+    }
+  </style>
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeElements = document.querySelectorAll(".fade-element");
+
+    // Function to check if an element is in the viewport
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Function to add the fade-in effect
+    function handleScroll() {
+      fadeElements.forEach((el) => {
+        if (isInViewport(el)) {
+          el.classList.add("fade-in");
+        }
+      });
+    }
+
+    // Trigger on scroll and initial page load
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run once to catch elements already in view
+  });
+</script>
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html" class="w3-bar-item w3-button fade-element">S.P.Q.R Republic of Rome</a>
+    <div class="w3-right w3-hide-small">
+      <a href="about.html" class="w3-bar-item w3-button fade-element">About</a>
+      <a href="military-achievements.html" class="w3-bar-item w3-button fade-element">Military Achievements</a>
+      <a href="policies.html" class="w3-bar-item w3-button fade-element">Policies</a>
+      <a href="endorsements.html" class="w3-bar-item w3-button fade-element">Endorsements</a>
+      <a href="political-achievements.html" class="w3-bar-item w3-button fade-element">Political Achievements</a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Header Section with Image and Overlay Text -->
+  <div class="image-container">
+    <img src="images/Screenshot 2024-12-07 011716.png" alt="Screenshot">
+    <div class="overlay-text fade-element"> <!-- Fade element here -->
+      <h1>Gaius Marius</h1>
+      <h1>For Consul</h1>
+      <p>Stability. Leadership. Victory for Rome.</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-row">
+    <!-- Image Section -->
+    <div class="w3-col m3 w3-padding-large">
+      <img src="6200.jpg" class="fade-element" style="width: 100%; margin-right: 10px;"> <!-- Fade element here -->
+    </div>
+
+    <!-- Text Section -->
+    <div class="w3-col m9 w3-padding-large">
+      <h1 class="w3-center fade-element">Gaius Marius</h1><br> <!-- Fade element here -->
+      <h5 class="w3-center fade-element">For Roman Consul</h5> <!-- Fade element here -->
+      <p class="w3-large fade-element">Why Vote for Gaius Marius for one he is one of Rome’s most influentials leaders, known for his military genius, political savvy, and dedication to Rome’s welfare. Rising from humble beginnings, Marius broke through the barriers of his time to hold the consulship an unprecedented seven times, a testament to his resilience and vision. As a reformer, he revolutionized the Roman army, creating a more professional, efficient military that ensured Rome’s dominance on the battlefield. Marius is a symbol of determination, reform, and unwavering loyalty to Rome. 
+<h5 class="w3-tag w3-light-grey">Proven Leadership: With five successful consulships already behind him, Marius has the experience, insight, and leadership to tackle Rome’s greatest challenges. His ability to unite diverse factions and make tough decisions is exactly what Rome needs to thrive.
+
+<p class="w3-large w3-text-grey w3-hide-medium">Defender of Rome's Strength: Marius is a military legend. His strategic brilliance led Rome to victory against some of its fiercest enemies, including the Teutones and Cimbri. His leadership will ensure that Rome remains a powerful force in the Known World.</span> 
+
+    <p class="w3-large w3-text-grey w3-hide-medium">Champion of the People: Marius has always been a leader of the common people. By reforming the army to allow the poor to enlist, he created opportunities for social mobility and strengthened the Republic. He believes in lifting up Rome’s citizens, ensuring that all Romans have a stake in the Republic’s success.
+
+<p class="w3-large w3-text-grey w3-hide-medium">Reformer for a Stronger Rome: Marius understands that Rome cannot stand still. His vision for reform includes not only military modernization but also political and social innovations that will make Rome more inclusive, stronger, and ready for the future.
+
+<p class="w3-large w3-text-grey w3-hide-medium">Commitment to Rome’s Prosperity: Marius’ experience in governance and military matters means he has a unique ability to balance Rome’s domestic and foreign needs. With his leadership, Rome will remain prosperous, secure, and ready to face whatever challenges arise.</p>
+    </div>
+  </div>
+<div class="w3-row">
+    <!-- Image Section -->
+    <div class="w3-col m3 w3-padding-large">
+      <img src="Screenshot 2024-12-09 033000.png" style="width: 100%; margin-right: 10px;"> <!-- Fade element here -->
+    </div>
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1 class="fade-element">Contribute</h1><br> <!-- Fade element here -->
+    <p class="fade-element">Pledge your loyalty to the mighty Republic and ensure a leadership worthy to govern over the territories.</p>
+    <p class="w3-text-blue-grey w3-large fade-element"><b>00186 Rome, Metropolitan City of Rome Capital, Italy</b></p> <!-- Fade element here -->
+    <p class="fade-element">You can also contact us by phone 00553123-2323 or email Dominionoverall@gmail.com, or you can send us a message here:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 fade-element" type="text" placeholder="Name" required name="Name"></p> <!-- Fade element here -->
+      <p><input class="w3-input w3-padding-16 fade-element" type="number" placeholder="Number" required name="People"></p> <!-- Fade element here -->
+      <p><input class="w3-input w3-padding-16 fade-element" type="text" placeholder="Message \ Special requirements" required name="Message"></p> <!-- Fade element here -->
+      <p><button class="w3-button w3-light-grey w3-section fade-element" type="submit">SEND MESSAGE</button></p> <!-- Fade element here -->
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-light-grey w3-padding-32">
+    <p class="fade-element">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p> <!-- Fade element here -->
+  </footer>
+
+</body>
+</html>

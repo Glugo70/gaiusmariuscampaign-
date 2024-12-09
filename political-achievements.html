@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>W3.CSS Template</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    /* Global Font Styling */
+    body {
+      font-family: "Times New Roman", Georgia, Serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+    }
+
+    /* Fade-in effect */
+    .fade-element {
+      opacity: 0;
+      transition: opacity 2s ease-in-out; /* Fade-in transition */
+    }
+
+    .fade-in {
+      opacity: 1;
+    }
+
+    /* Image Container for Gradient Effect and Cropping */
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Hides the bottom 20% of the image */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover; /* Ensures the image covers the container */
+      object-position: center top; /* Position image to crop the bottom */
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60%; /* Adjust for the gradient coverage */
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Title Text Styling */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 5%; /* Align text to the left */
+      transform: translateY(-50%);
+      color: #000;
+      font-size: 5.5rem;
+      text-align: left;
+      z-index: 2;
+      line-height: 1.4;
+    }
+
+    .overlay-text h1 {
+      margin: 0;
+      font-size: 5.6rem; /* Double the original size */
+    }
+
+    .overlay-text p {
+      margin-top: 10px;
+      font-size: 2.4rem; /* Double the original size */
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .overlay-text h1 {
+        font-size: 4rem; /* Adjust size for smaller screens */
+      }
+      .overlay-text p {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Styling for smaller image below */
+    .smaller-image {
+      width: 50%; /* Adjust the width to make the image smaller */
+      max-width: 200px; /* Limit the size to a maximum of 200px */
+      margin: 20px auto; /* Center the image horizontally with some space on top and bottom */
+      display: block; /* Ensures it's displayed as a block element */
+    }
+  </style>
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeElements = document.querySelectorAll(".fade-element");
+
+    // Function to check if an element is in the viewport
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Function to add the fade-in effect
+    function handleScroll() {
+      fadeElements.forEach((el) => {
+        if (isInViewport(el)) {
+          el.classList.add("fade-in");
+        }
+      });
+    }
+
+    // Trigger on scroll and initial page load
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run once to catch elements already in view
+  });
+</script>
+
+<body>
+
+ <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html" class="w3-bar-item w3-button fade-element">S.P.Q.R Republic of Rome</a>
+    <div class="w3-right w3-hide-small">
+      <a href="about.html" class="w3-bar-item w3-button fade-element">About</a>
+      <a href="military-achievements.html" class="w3-bar-item w3-button fade-element">Military Achievements</a>
+      <a href="policies.html" class="w3-bar-item w3-button fade-element">Policies</a>
+      <a href="endorsements.html" class="w3-bar-item w3-button fade-element">Endorsements</a>
+      <a href="political-achievements.html" class="w3-bar-item w3-button fade-element">Political Achievements</a>
+    </div>
+  </div>
+</div>
+        <a href="#Political Achievements" class="w3-bar-item w3-button fade-element">Political Achievements</a> <!-- Fade element here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Section with Image and Overlay Text -->
+  <div class="image-container">
+    <img src="Screenshot 2024-12-09 031934.png">
+    <div class="overlay-text fade-element"> <!-- Fade element here -->
+      <h1>Political Achievements</h1>
+     
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-row">
+    <!-- Image Section -->
+    <div class="w3-col m3 w3-padding-large">
+      <img src="roman-sarcophagus-with-the-triumph-of-dionysus-walters-2331-27289e-1024.jpg" class="fade-element" style="width: 100%; margin-right: 20px;"> <!-- Fade element here -->
+    </div>
+
+    <!-- Text Section -->
+    <div class="w3-col m9 w3-padding-large">
+      <h1 class="w3-center fade-element">Accomplishments </h1><br> <!-- Fade element here -->
+    <h5 class="w3-tag w3-light-grey"> As Tribune of the Plebs, I fought to ensure every Roman citizen could vote freely and without coercion. I introduced reforms to election procedures, narrowing the bridges at voting stations to prevent aristocrats from intimidating voters. I stood up to opposition, including the consuls, to make sure your voice mattered.
+
+</span>
+
+<h5 class="w3-tag w3-light-grey">When Rome faced chaos in Numidia, I brought order. After securing victory over Jugurtha’s forces in open battle, I restructured Rome's military strategies to adapt to guerrilla warfare, ensuring ultimate success. My leadership was recognized not by aristocratic favoritism but by the popular and equestrian vote, proving I serve Rome, not elite interests.</span> 
+
+<h5 class="w3-tag w3-light-grey">Faced with a manpower crisis, I redefined who could serve Rome. By recruiting men from all social classes, including the poor, I gave opportunity to those who had been excluded from military service. This reform not only bolstered our armies but also transformed the legions into a force that represented all of Rome, not just the privileged few.</span> 
+
+   <h5 class="w3-tag w3-light-grey">As a military commander, I introduced groundbreaking changes that strengthened the Republic’s armies for generations. From logistical improvements to the training of soldiers, my strategies ensured Rome’s dominance on the battlefield.
+
+<h5 class="w3-tag w3-light-grey">My campaigns preserved Rome’s borders and crushed its enemies, from North Africa to Gaul.
+His reforms professionalized the army, setting a standard that would define Roman warfare for centuries.
+As a leader, he inspired loyalty and trust, earning the respect of his troops and the Roman people
+    </div>
